@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import './style.css';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
@@ -22,7 +23,7 @@ const AddTodo = () => {
               onChange={(event) => setInputData(event.target.value)}
             />
             <p className='icon' onClick={() => dispatch(addTodo(inputData),
-              setInputData(''))}> ➕</p>
+              setInputData(''))}><i class="fa-solid fa-plus"></i></p>
           </div>
 
           {/* Items  */}
@@ -32,7 +33,7 @@ const AddTodo = () => {
               return (
                 <div className="addItem" key={ele.id}>
                   <p>{ele.data}</p>
-                  <p id='icon' onClick={() => dispatch(deleteTodo(ele.id))}> ➕</p>
+                  <p id='icon' onClick={() => dispatch(deleteTodo(ele.id))}><i class="fa-solid fa-trash"></i></p>
                 </div>
               )
             })
